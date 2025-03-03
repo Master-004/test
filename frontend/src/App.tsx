@@ -8,7 +8,7 @@ function Welcome() {
   return <h1> Welcome to the NCAA Basketball information website</h1>;
 }
 
-function Team({
+function TeamCard({
   school,
   name,
   city,
@@ -21,12 +21,14 @@ function Team({
 }) {
   return (
     <>
-      <h2>{school}</h2>
-      <h3>Mascot: {name}</h3>
-      <h3>
-        Location: {city},{state}
-      </h3>
-      <p></p>
+      <div>
+        <h2>{school}</h2>
+        <h3>Mascot: {name}</h3>
+        <h3>
+          Location: {city},{state}
+        </h3>
+        <br></br>
+      </div>
     </>
   );
 }
@@ -49,7 +51,7 @@ function TeamLists() {
   return (
     <>
       {teams.map((singleTeam) => (
-        <Team
+        <TeamCard
           school={singleTeam.school}
           name={singleTeam.name}
           city={singleTeam.city}
